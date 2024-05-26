@@ -1,10 +1,9 @@
-﻿namespace NLogExample
+﻿namespace NLogExample;
+
+public static class NLogExtension
 {
-    public static class NLogExtension
+    public static void ConfigureLoggerService(this IServiceCollection services)
     {
-        public static void ConfigureLoggerService(this IServiceCollection services)
-        {
-            services.AddSingleton<ILoggerManager, LoggerManager>();
-        }
+        services.AddSingleton<ILoggerManager, LoggerManager>();
     }
 }

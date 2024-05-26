@@ -1,10 +1,9 @@
-﻿namespace SerilogExample.Models
+﻿namespace SerilogExample.Models;
+
+public class BlogDataModel
 {
-    public class BlogDataModel
-    {
-        public Guid BlogId { get; set; }
-        public string BlogTitle { get; set; }
-        public string BlogAuthor { get; set; }
-        public string BlogContent { get; set; }
-    }
+    public Guid BlogId { get; set; }
+    public string BlogTitle { get; set; } = null!;
+    public string BlogAuthor { get; set; } = null!;
+    public string BlogContent { get; set; } = null!;
 }
