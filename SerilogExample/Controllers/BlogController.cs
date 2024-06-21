@@ -48,6 +48,7 @@ public class BlogController : ControllerBase
         _logger.LogInformation("Blog list => " + JsonConvert.SerializeObject(lst));
         return Ok(lst);
     }
+
     #endregion
 
     #region Test logging
