@@ -5,17 +5,19 @@ using Serilog.Templates;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 Log.Logger = new LoggerConfiguration()
-          .MinimumLevel.Debug()
-          .WriteTo.File(new CompactJsonFormatter(), "logs/RestApi.txt", rollingInterval: RollingInterval.Hour)
-          .WriteTo.Console(new ExpressionTemplate(
-        "[{@t:HH:mm:ss} {@l:u3} {SourceContext}] {@m}\n{@x}"))
-          //      .WriteTo
-          //.MSSqlServer(
-          //    connectionString: builder.Configuration.GetConnectionString("DbConnection"),
-          //    sinkOptions: new MSSqlServerSinkOptions { TableName = "Tbl_Logs", AutoCreateSqlTable = true })
-          .CreateLogger();
+    .MinimumLevel.Debug()
+    .WriteTo.File(
+        new CompactJsonFormatter(),
+        "logs/RestApi.txt",
+        rollingInterval: RollingInterval.Hour
+    )
+    .WriteTo.Console(new ExpressionTemplate("[{@t:HH:mm:ss} {@l:u3} {SourceContext}] {@m}\n{@x}"))
+    //      .WriteTo
+    //.MSSqlServer(
+    //    connectionString: builder.Configuration.GetConnectionString("DbConnection"),
+    //    sinkOptions: new MSSqlServerSinkOptions { TableName = "Tbl_Logs", AutoCreateSqlTable = true })
+    .CreateLogger();
 
 builder.Host.UseSerilog();
 builder.Services.AddControllers();
