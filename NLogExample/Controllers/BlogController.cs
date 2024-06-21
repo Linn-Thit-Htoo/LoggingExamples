@@ -17,6 +17,7 @@ public class BlogController : ControllerBase
     }
 
     #region Get blogs
+
     [HttpGet]
     public IActionResult GetBlogs()
     {
@@ -47,6 +48,7 @@ public class BlogController : ControllerBase
         _logger.LogInfo("Blog list => " + JsonConvert.SerializeObject(lst));
         return Ok(lst);
     }
+
     #endregion
 
     #region Test logging
