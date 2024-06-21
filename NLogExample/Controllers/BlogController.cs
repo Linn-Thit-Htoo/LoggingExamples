@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using NLogExample;
 using NLogExample.Models;
 
 namespace NLogExample.Controllers;
