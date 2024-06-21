@@ -17,6 +17,7 @@ public class BlogController : ControllerBase
     }
 
     #region Get blogs
+
     [HttpGet]
     public IActionResult GetBlogs()
     {
