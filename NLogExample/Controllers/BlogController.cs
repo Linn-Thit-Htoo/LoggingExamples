@@ -52,11 +52,13 @@ public class BlogController : ControllerBase
     #endregion
 
     #region Test logging
+
     [HttpGet("testing")]
     public IActionResult TestLogging()
     {
         _logger.LogDebug("test logging");
         return Ok();
     }
+
     #endregion
 }
