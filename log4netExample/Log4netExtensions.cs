@@ -1,5 +1,5 @@
-﻿using log4net.Config;
-using log4net;
+﻿using log4net;
+using log4net.Config;
 
 namespace log4netExample;
 
